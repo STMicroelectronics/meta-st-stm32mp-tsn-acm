@@ -1,0 +1,130 @@
+
+From 7e39e66939361ca7f6f0e9c8b93d1c3e97fddabb Mon Sep 17 00:00:00 2001
+From: Christophe Priouzeau <christophe.priouzeau@foss.st.com>
+Date: Tue, 20 Feb 2024 14:20:46 +0100
+Subject: [PATCH] ACM-YANG-Patch-to-support-arm64-bits-compilation
+
+---
+ ngn.acm-yang/acm.c | 28 ++++++++++++++--------------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
+
+diff --git a/acm.c b/acm.c
+index 0e996d3..9255eca 100644
+--- a/acm.c
++++ b/acm.c
+@@ -304,7 +304,7 @@ static int new_acm_state(struct lyd_node **parent, int index, char *container_na
+             }
+             break;
+         case STATUS_IP_ERROR_FLAGS:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_IP_ERROR_FLAGS_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_IP_ERROR_FLAG_STR, ERR_NOT_CREATED_ELEMENT_STR);
+@@ -312,91 +312,91 @@ static int new_acm_state(struct lyd_node **parent, int index, char *container_na
+ 
+             break;
+         case STATUS_POLICING_ERROR_FLAGS:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_POLICING_ERROR_FLAGS_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_POLICING_ERROR_FLAGS_STR, ERR_NOT_CREATED_ELEMENT_STR);
+             }
+             break;
+         case STATUS_RUNT_FRAMES_PREV_CYCLE:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_RUNT_FRAMES_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_RUNT_FRAMES_STR, ERR_NOT_CREATED_ELEMENT_STR);
+             }
+             break;
+         case STATUS_MII_ERRORS_PREV_CYCLE:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_MII_ERRORS_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_MII_ERRORS_STR, ERR_NOT_CREATED_ELEMENT_STR);
+             }
+             break;
+         case STATUS_GMII_ERROR_PREV_CYCLE:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_GMII_ERROR_PREV_CYCLE_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_GMII_ERROR_PREV_CYCLE_STR, ERR_NOT_CREATED_ELEMENT_STR);
+             }
+             break;
+         case STATUS_SOF_ERRORS_PREV_CYCLE:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_SOF_ERRORS_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_SOF_ERRORS_STR, ERR_NOT_CREATED_ELEMENT_STR);
+             }
+             break;
+         case STATUS_LAYER7_MISSMATCH_PREV_CYCLE:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_LAYER7_MISMATCH_CNT_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_LAYER_MISMATCH_CNT_STR, ERR_NOT_CREATED_ELEMENT_STR);
+             }
+             break;
+         case STATUS_DROPPED_FRAMES_PREV_CYCLE:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_DROPPED_FRAMES_CNT_PREV_CYCLE_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_DROPED_FRAMES_CNT_STR, ERR_NOT_CREATED_ELEMENT_STR);
+             }
+             break;
+         case STATUS_FRAMES_SCATTERED_PREV_CYCLE:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_FRAMES_SCATTERED_PREV_CYCLE_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_SCATTER_DMAF_STR, ERR_NOT_CREATED_ELEMENT_STR);
+             }
+             break;
+         case STATUS_DISABLE_OVERRUN_PREV_CYCLE:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_DISABLE_OVERRUN_PREV_CYCLE_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_DISABLE_OVERRRUN_STR, ERR_NOT_CREATED_ELEMENT_STR);
+             }
+             break;
+         case STATUS_TX_FRAMES_CYCLE_CHANGE:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_TX_FRAMES_CYCLE_CHANGE_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_TX_FRAMES_CYCLE_CHANGE_STR, ERR_NOT_CREATED_ELEMENT_STR);
+             }
+             break;
+         case STATUS_TX_FRAMES_PREV_CYCLE:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_TX_FRAMES_PREV_CYCLE_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_TX_FRAMES_PREV_CYCLE_STR, ERR_NOT_CREATED_ELEMENT_STR);
+             }
+             break;
+         case STATUS_RX_FRAMES_CYCLE_CHANGE:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_RX_FRAMES_CYCLE_CHANGE_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_RX_FRAMES_CYCLE_CHANGE_STR, ERR_NOT_CREATED_ELEMENT_STR);
+             }
+             break;
+         case STATUS_RX_FRAMES_PREV_CYCLE:
+-            snprintf(tmp, MAX_STR_LEN, "%lld", acm_status);
++            snprintf(tmp, MAX_STR_LEN, "%ld", acm_status);
+             fill_xpath(path, ACM_RX_FRAMES_PREV_CYCLE_XPATH, container_name);
+             if (NULL == lyd_new_path(*parent, NULL, path, tmp, 0, 0)) {
+                 SRP_LOG_INF(ERROR_MSG_FUN_NODE_EL_AND_MSG_STR, __func__, ACM_RX_FRAMES_PREV_CYCLE_STR, ERR_NOT_CREATED_ELEMENT_STR);
+-- 
+2.34.1
