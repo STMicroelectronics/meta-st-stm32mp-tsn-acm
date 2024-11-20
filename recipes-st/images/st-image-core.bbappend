@@ -7,5 +7,5 @@ CORE_IMAGE_EXTRA_INSTALL += " \
 "
 # kernel addons
 CORE_IMAGE_EXTRA_INSTALL += " \
-    kernel-module-acm \
+    kernel-module-tsn-acm \
 "

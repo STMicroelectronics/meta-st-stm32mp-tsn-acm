@@ -7,7 +7,7 @@ SRCREV = "${TSN_ACM_SRCREV}"
 TTTECH_DIR = "ngn.ngn-demo/acm-demo"
 S = "${WORKDIR}/git/${TTTECH_DIR}"
 
-PR = "st-1.6.7"
+PV = "st-1.6.7"
 
 EXTRA_OEMAKE = " DESTDIR=${D} "
 EXTRA_OEMAKE += "CFLAGS='${CFLAGS} -Wno-error=format-security'"

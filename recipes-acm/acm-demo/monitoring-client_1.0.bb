@@ -10,7 +10,7 @@ TTTECH_DIR = "ngn.ngn-demo/monitoring-client"
 S = "${WORKDIR}/git/${TTTECH_DIR}"
 
 SRC_URI += "file://includes"
-PR = "st-1.6.7"
+PV = "st-1.6.7"
 
 EXTRA_OEMAKE = " DESTDIR=${D} "
 

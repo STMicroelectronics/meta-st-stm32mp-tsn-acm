@@ -14,12 +14,12 @@ SRC_URI += "\
     \
     file://includes \
     "
-PR = "st-1.6.7"
+PV = "st-1.6.7"
 
 #TODO: temporary to bypass kernel module
 CFLAGS:append = "-I${TSN_ACM_LAYER}/recipes-acm/libacmconfig/files/includes"
 
-EXTRA_OEMAKE += "EXTERNAL_LIBRARY_VERSION=1.6.6"
+EXTRA_OEMAKE += "EXTERNAL_LIBRARY_VERSION=1.6.7"
 
 do_compile () {
     export CFLAGS="${CFLAGS}"

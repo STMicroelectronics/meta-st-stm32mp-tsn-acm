@@ -38,3 +38,5 @@ FILES_${PN}-dev += "${includedir}/linux/acm/acmdrv.h"
 do_compile:prepend() {
     export FLX_MODULE_PATH="${STAGING_INCDIR}/kernel-module-edge/"
 }
+
+do_create_runtime_spdx[depends] += "virtual/kernel:do_create_runtime_spdx"
